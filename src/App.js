@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import Navbar from './components/layout/Navbar';
+import Home from './components/layout/Home';
 
 class App extends Component {
   state = {
@@ -21,13 +22,26 @@ class App extends Component {
       .catch(err => console.error(err))
   }
 
-  renderRecipe = ({ id, title }) => <div key={id}>{title}</div>;
-
   render() {
-    const { recipes } = this.state;
+
+    const recipeIndex = this.state.recipes.map(recipe => {
+      return(
+        <div className="card container mt-4" key={recipe.id}>
+          <img src={recipe.image} className="card-img-top " alt={recipe.title}/>
+          <div className="card-body">
+            <h5 className="card-title">{recipe.title}</h5>
+            <p className="card-text">{recipe.description}</p>
+            <a href="#" className="btn btn-primary">View Recipe</a>
+          </div>
+        </div>
+      );
+    });
+    
     return (
-      <div className="App">
-        {recipes.map(this.renderRecipe)}
+      <div>
+        <Navbar/>
+        <Home />
+        {/* {recipeIndex} */}
       </div>
     );
   }

@@ -1,14 +1,200 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media (min-width: 1200px) { 
+  /* RECIPE INDEX STYLES */
+  .card-img-top {
+    width: 400px;
+    padding: 20px;
+  }
+
+  /* NAVbAR STYLES */
+  .logo {
+    width: 130px;
+  }
+
+  .login-menu {
+    padding: 20px;
+    width: 330px;
+    margin-left: -250px;
+    background: rgba(0, 0, 0, 0.23);
+  }
+
+  .login-label {
+    color: #FFF;
+  }
+
+  .login-button {
+    margin-bottom: 10px !important;
+  }
+
+  .sign-up {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .sign-up:hover {
+    text-align: center;
+    color: #000;
+    background: #fff;
+  }
+
+  /* HOME STYLES */
+  .carousel-item {
+    max-height: 430px; 
+    width: 100%; 
+    overflow: hidden;
+  }
+
+  .carousel-caption {
+    bottom: 0%;
+    font-family: 'Roboto Slab', serif;
+    background: rgba(0, 0, 0, 0.12);
+    width: 100%;
+    right: 0%;
+    left: 0%;
+    height: 100%;
+  }
+
+  .caption-text {
+    margin-top: calc(100% / 10 );
+    height: 85px;
+  }
+
+  .home-heading {
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: -3px;
+  }
+
+  .img-slides {
+    margin-top: -270px;
+  }
+
+  .home-subheading {
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: -2px;
+  }
+
+  .home-content {
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* iPad Landscape */
+@media (max-width: 1024px) {
+  /* Navbar */
+  .logo {
+    width: 120px;
+  }
+
+  .search-box {
+    width: 120px !important;
+  }
+
+  .login-menu {
+    padding: 20px;
+    width: 330px;
+    margin-left: -250px;
+    background: rgba(0, 0, 0, 0.23);
+  }
+
+  .login-label {
+    color: #FFF;
+  }
+
+  .login-button {
+    margin-bottom: 10px !important;
+  }
+
+  .sign-up {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .sign-up:hover {
+    text-align: center;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Home */
+  .carousel-item {
+    max-height: 310px; 
+  }
+  
+  .caption-text {
+    margin-top: calc(100% / 10 );
+    height: 85px;
+  }
+}
+
+/* iPhone X Landscape */
+@media (max-width: 812px) {
+  /*  Navbar */
+  .login-menu {
+    width: 80%;
+    margin-left: 0;
+    margin-bottom: 15px;
+    background: #343A40;
+    color: white;
+    border: 1px solid white;
+  }
+
+  .search-box {
+    width: 524px !important;
+  }
+
+  /* Home */
+  .carousel-item {
+    max-height: 360px; 
+    width: 100%; 
+    overflow: hidden;
+  }
+}
+
+/* iPad */
+@media (max-width: 768px) {
+  .login-menu {
+    width: 80%;
+    margin-left: 0;
+    margin-bottom: 15px;
+    background: #343A40;
+    color: white;
+    border: 1px solid white;
+  }
+  .search-box {
+    width: 490px !important;
+  }
+}
+
+/* iPhone X */
+@media (max-width: 375px) {
+  /* Navbar */
+  .login-menu {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 15px;
+    background: #343A40;
+    color: white;
+    border: 1px solid white;
+  }
+
+  .search-box {
+    width: 329px !important;
+  }
+
+  .search-button {
+    margin-top: 13px !important;
+  }
+
+  /* Home */
+  .carousel-item {
+    max-height: 212px; 
+    width: 100%; 
+    overflow: hidden;
+  }
 }
