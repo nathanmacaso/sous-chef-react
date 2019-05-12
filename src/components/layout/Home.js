@@ -39,12 +39,12 @@ export default class Home extends Component {
           </a>
         </div> 
         <div className="row py-5 px-3">
-          <div className="col-md-6">
-            <iframe width="500" height="300" src="https://www.youtube.com/embed/bSzlRuYfamE" frameBorder="0" allowFullScreen></iframe>
+          <div className="col-sm-12 col-md-6">
+            <iframe width="100%" height="300" src="https://www.youtube.com/embed/bSzlRuYfamE" frameBorder="0" allowFullScreen></iframe>
             <h2 className="home-heading">How it works</h2>
             <p className="home-content">Each user has a customizable virtual pantry.  Sous-Chef then gives you a list of recipes where you have 100% and 75% of the ingredients.</p>
           </div>
-          <div className="col-md-6">
+          <div className="col-sm-12 col-md-6">
             <h2 className="home-heading">About us</h2>
             <h3 className="home-subheading">Unleash your inner chef</h3>
             <p className="home-content">Cooking is fundamental skill everyone should learn.  Sous-Chef makes cooking at home a breeze by giving you a list of recipes you can immediately make.  Just fill your virtual pantry with ingredients currently in your kitchen, and Sous-Chef will do the rest.</p>
