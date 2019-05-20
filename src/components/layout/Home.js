@@ -40,7 +40,7 @@ export default class Home extends Component {
         </div> 
         <div className="row py-5 px-3">
           <div className="col-sm-12 col-md-6">
-            <iframe width="100%" height="300" src="https://www.youtube.com/embed/bSzlRuYfamE" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="100%" height="300" title="presentation" src="https://www.youtube.com/embed/bSzlRuYfamE" frameBorder="0" allowFullScreen></iframe>
             <h2 className="home-heading">How it works</h2>
             <p className="home-content">Each user has a customizable virtual pantry.  Sous-Chef then gives you a list of recipes where you have 100% and 75% of the ingredients.</p>
           </div>

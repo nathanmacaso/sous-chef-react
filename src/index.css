@@ -1,11 +1,5 @@
 @media (min-width: 1200px) { 
-  /* RECIPE INDEX STYLES */
-  .card-img-top {
-    width: 400px;
-    padding: 20px;
-  }
-
-  /* NAVbAR STYLES */
+  /* Navbar */
   .logo {
     width: 130px;
   }
@@ -37,7 +31,7 @@
     background: #fff;
   }
 
-  /* HOME STYLES */
+  /* Home */
   .carousel-item {
     max-height: 430px; 
     width: 100%; 
@@ -81,6 +75,27 @@
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
   }
+
+  /* Recipes */
+  .card-img-top {
+    width: 400px;
+    padding: 20px;
+  }
+
+  /* Pantry */
+  .pantry-background {
+    width: 100%;
+  }
+  .pantry-overlay {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
 }
 
 /* iPad Landscape */
