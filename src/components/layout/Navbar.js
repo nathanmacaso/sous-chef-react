@@ -1,16 +1,42 @@
 import React, { Component } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 import logo from '../../images/logo.png';
+import Login from './Login';
 
-export default class Navbar extends Component {
-  // constructor(props){
-  //   super(props);
-  // }
+class Navbar extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      email: '',
+      password: ''
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+  }
 
   render() {
+    const { auth } = this.props;
+    console.log(auth);
+
+    let loginLinks;
+    if(auth.isLoggedIn) {
+      loginLinks = <NavLink to="/signout" className="nav-link">Sign Out</NavLink>
+    } else {
+      loginLinks = <Login handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+    }
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <NavLink to="/" className="navbar-brand">
+        <NavLink to="/home" className="navbar-brand">
           <img src={logo} alt="Logo" className="logo"/>
         </ NavLink>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,9 +45,6 @@ export default class Navbar extends Component {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto">
-            <li className="nav-item pr-3">
-              <NavLink to="/" className="nav-link">Home<span className="sr-only">(current)</span></NavLink>
-            </li>
             <li className="nav-item pr-3">
               <NavLink to="/recipes" className="nav-link">Recipes</NavLink>
             </li>
@@ -42,29 +65,18 @@ export default class Navbar extends Component {
             </li>
           </ul>
           <ul className="navbar-nav pr-3">
-            <li className="nav-item dropdown">
-              <Link to="/" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Login
-              </Link>
-              <div className="dropdown-menu login-menu" aria-labelledby="navbarDropdown">
-              <form>
-                <div className="form-group">
-                  <label className="login-label" htmlFor="email">Email Address</label>
-                  <input type="email" className="form-control" id="email" placeholder="Enter email"/>
-                </div>
-                <div className="form-group">
-                  <label className="login-label" htmlFor="password">Password</label>
-                  <input type="password" className="form-control" id="password" placeholder="Password"/>
-                </div>
-                <button type="submit" className="btn btn-outline-light my-2 my-sm-0 login-button">Submit</button>
-              </form>
-                <div className="dropdown-divider py-1"></div>
-                <Link to="/" className="dropdown-item sign-up">Sign Up</Link>
-              </div>
-            </li>
+            {loginLinks}
           </ul>
         </div>
       </nav>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth.auth
+  }
+}
+
+export default connect(mapStateToProps)(Navbar)
