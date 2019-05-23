@@ -19,18 +19,6 @@
     margin-bottom: 10px !important;
   }
 
-  .sign-up {
-    text-align: center;
-    color: white;
-    font-weight: 600;
-  }
-  
-  .sign-up:hover {
-    text-align: center;
-    color: #000;
-    background: #fff;
-  }
-
   /* Home */
   .carousel-item {
     max-height: 430px; 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import logo from '../../images/logo.png';
+import { createUser } from '../../store/actions/authActions';
 import Login from './Login';
 
 class Navbar extends Component {
@@ -9,25 +10,25 @@ class Navbar extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      first: '',
+      last: '',
     };
   }
 
   handleChange = (e) => {
     this.setState({
-      [e.target.id]: e.target.value
+      [e.target.name]: e.target.value
     });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.createUser(this.state);
   }
 
   render() {
     const { auth } = this.props;
-    console.log(auth);
-
     let loginLinks;
     if(auth.isLoggedIn) {
       loginLinks = <NavLink to="/signout" className="nav-link">Sign Out</NavLink>
@@ -79,4 +80,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Navbar)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createUser: (user) => dispatch(createUser(user))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

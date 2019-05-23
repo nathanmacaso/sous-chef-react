@@ -9,18 +9,52 @@ const Login = ({handleChange, handleSubmit}) => {
     </Link>
     <div className="dropdown-menu login-menu" aria-labelledby="navbarDropdown">
     <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label className="login-label" htmlFor="email">Email Address</label>
-        <input type="email" className="form-control" id="email" placeholder="Enter email" onChange={handleChange}/>
+    
+      <ul className="nav mb-3" id="pills-tab" role="tablist">
+        <li className="nav-item">
+          <a className="nav-link active" id="pills-login-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" id="pills-signup-tab" data-toggle="pill" href="#pills-signup" role="tab" aria-controls="pills-signup" aria-selected="false">&emsp;Sign Up</a>
+        </li>
+      </ul>
+      <div className="dropdown-divider py-1 mb-3"></div>
+      
+      <div className="tab-content" id="pills-tabContent">
+        <div className="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+          <div className="form-group">
+            <label className="login-label" htmlFor="email">Email Address</label>
+            <input type="email" className="form-control" name="email" placeholder="Enter email" onChange={handleChange}/>
+          </div>
+          <div className="form-group">
+            <label className="login-label" htmlFor="password">Password</label>
+            <input type="password" className="form-control" name="password" placeholder="Password" onChange={handleChange}/>
+          </div>
+          <button type="submit" className="btn btn-outline-light my-2 my-sm-0 login-button">Login</button>
+        </div>
+
+        <div className="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab">
+          <div className="form-group">
+            <label className="login-label" htmlFor="first">First Name</label>
+            <input type="text" className="form-control" name="first" placeholder="Enter First Name" onChange={handleChange}/>
+          </div>
+          <div className="form-group">
+            <label className="login-label" htmlFor="last">Last Name</label>
+            <input type="text" className="form-control" name="last" placeholder="Enter Last Name" onChange={handleChange}/>
+          </div>
+          <div className="form-group">
+            <label className="login-label" htmlFor="email">Email Address</label>
+            <input type="email" className="form-control" name="email" placeholder="Enter email" onChange={handleChange}/>
+          </div>
+          <div className="form-group">
+            <label className="login-label" htmlFor="password">Password</label>
+            <input type="password" className="form-control" name="password" placeholder="Password" onChange={handleChange}/>
+          </div>
+          <button type="submit" className="btn btn-outline-light my-2 my-sm-0 login-button">Sign Up</button>
+        </div>
       </div>
-      <div className="form-group">
-        <label className="login-label" htmlFor="password">Password</label>
-        <input type="password" className="form-control" id="password" placeholder="Password" onChange={handleChange}/>
-      </div>
-      <button type="submit" className="btn btn-outline-light my-2 my-sm-0 login-button">Submit</button>
+
     </form>
-      <div className="dropdown-divider py-1"></div>
-      <Link to="/signup" className="dropdown-item sign-up">Sign Up</Link>
     </div>
   </li>
 
