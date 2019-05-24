@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { firestoreConnect } from 'react-redux-firebase';
 import logo from '../../images/logo.png';
 import { createUser } from '../../store/actions/authActions';
 import Login from './Login';
@@ -86,4 +88,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps), 
+  firestoreConnect([
+    { collection: 'recipes' }
+  ])
+)(Navbar)
