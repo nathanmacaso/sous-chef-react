@@ -12,7 +12,9 @@ class Recipes extends Component {
       recipeIndex = recipes.map(recipe => {
         return(
           <div className="card col-sm-6 col-md-4 ml-auto" key={recipe.id}>
-            <img src={recipe.image} className="card-img-top " alt={recipe.title}/>
+            <div className="recipes-img-container">
+              <img src={recipe.image} className="card-img-top recipes-img" alt={recipe.title}/>
+            </div>
             <div className="card-body">
               <h5 className="card-title">{recipe.title}</h5>
               <p className="card-text">{recipe.description}</p>

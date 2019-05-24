@@ -65,9 +65,14 @@
   }
 
   /* Recipes */
-  .card-img-top {
-    width: 400px;
+  .recipes-img {
+    height: 100%;
+    width: 100%;
     padding: 20px;
+  }
+  .recipes-img-container {
+    height: 500px;
+    width: 400px;
   }
 
   /* Pantry */
