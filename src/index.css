@@ -1,4 +1,15 @@
 @media (min-width: 1200px) { 
+  /* Globals */
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+  }
+  .btn {
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: -1px;
+    font-weight: 800;
+  }
+
   /* Navbar */
   .logo {
     width: 130px;
@@ -64,7 +75,16 @@
     font-size: 17px;
   }
 
-  /* Recipes */
+  /* RecipesIndex */
+  .recipe-index-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -2px;
+  }
+  .recipe-index-description {
+    font-size: 15px;
+  }
   .recipes-img {
     height: 100%;
     width: 100%;
@@ -73,6 +93,20 @@
   .recipes-img-container {
     height: 500px;
     width: 400px;
+    margin: 0 auto;
+  }
+
+  /* RecipeDetails */
+  .recipe-details-heading {
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: -3px;
+  }
+  .recipe-details-img {
+    height: 60%;
+    width: 60%;
+    padding: 20px;
   }
 
   /* Pantry */

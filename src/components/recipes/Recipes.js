@@ -13,12 +13,14 @@ class Recipes extends Component {
         return(
           <div className="card col-sm-6 col-md-4 ml-auto" key={recipe.id}>
             <div className="recipes-img-container">
-              <img src={recipe.image} className="card-img-top recipes-img" alt={recipe.title}/>
+              <Link to={`/recipe/${recipe.id}`}>
+                <img src={recipe.image} className="card-img-top recipes-img" alt={recipe.title}/>
+              </Link>
             </div>
             <div className="card-body">
-              <h5 className="card-title">{recipe.title}</h5>
-              <p className="card-text">{recipe.description}</p>
-              <Link to={`/recipe/${recipe.id}`}className="btn btn-primary">View Recipe</Link>
+              <h2 className="card-title recipe-index-title">{recipe.title}</h2>
+              <p className="card-text recipe-index-description">{recipe.description}</p>
+              <Link to={`/recipe/${recipe.id}`}className="btn btn-outline-dark">View Recipe</Link>
             </div>
           </div>
         );
