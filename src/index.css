@@ -19,7 +19,11 @@
     padding: 20px;
     width: 330px;
     margin-left: -250px;
-    background: rgba(0, 0, 0, 0.23);
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .login-error {
+    color: #ff0000;
   }
 
   .login-label {
@@ -30,7 +34,15 @@
     margin-bottom: 10px !important;
   }
 
+  .nav-link {
+    background: none;
+    border: none;
+  }
+
   /* Home */
+  .home-container {
+    padding-bottom: 50px;
+  }
   .carousel-item {
     max-height: 430px; 
     width: 100%; 
@@ -76,6 +88,9 @@
   }
 
   /* RecipesIndex */
+  .recipes-container {
+    padding-bottom: 50px;
+  }
   .recipe-index-title {
     font-family: 'Roboto Slab', serif;
     font-size: 28px;
@@ -137,8 +152,6 @@
     letter-spacing: -1px;
   }
 
-
-
   /* Pantry */
   .pantry-background {
     width: 100%;
@@ -153,7 +166,45 @@
     background: rgba(0, 0, 0, 0.7);
   }
 
+  /* Nutritional Facts */
+  .nutrition-label-container {
+    border: 1px solid black;
+    padding: 20px;
+  }
+  .nf-header {
+    font-size: 30px;
+  }
+  .nf-amount {
+    font-size: 15px;
+  }
+  .nf-servings {
+    border-bottom: 8px solid black;
+    padding-bottom: 5px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .nf-calories {
+    font-size: 25px;
+    line-height: 0;
+  }
+  .nf-border-1 {
+    border-bottom: 1px solid black;
+  }
+  .nf-border-2 {
+    border-bottom: 5px solid black;
+  }
+  .nf-border-3 {
+    border-bottom: 8px solid black;
+    padding-bottom: 5px;
+  }
+  .nf-right {
+    text-align: right;
+  }
+  .nf-padding {
+    padding-left: 15px;
+  }
 }
+
 
 /* iPad Landscape */
 @media (max-width: 1024px) {
@@ -170,7 +221,7 @@
     padding: 20px;
     width: 330px;
     margin-left: -250px;
-    background: rgba(0, 0, 0, 0.23);
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .login-label {

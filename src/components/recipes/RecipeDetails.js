@@ -3,17 +3,10 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import _ from 'lodash';
+import NutritionalFacts from '../layout/NutritionalFacts';
 
 const RecipeDetails = (props) => {
   const { recipe, nutritionalFacts } = props;
-  console.log(recipe);
-  // console.log(nutritionalFacts);
-  
-  // let ingredients;
-  // console.log(recipe.ingredients.split(','));
-
-  
-  
   
   if(recipe) {
     const ingredientArray = recipe.ingredients.split(',');
@@ -25,15 +18,24 @@ const RecipeDetails = (props) => {
     });
 
     const directionsArray = recipe.directions.split('\\n');
-    console.log(directionsArray);
     let directions;
     directions = directionsArray.map(direction => {
       return (
         <p key={_.uniqueId()}>{direction}</p>
       );
     })
+
+    let nfObj;
+    let serving;
+    if(nutritionalFacts) {
+      nfObj = nutritionalFacts[Object.keys(nutritionalFacts)[0]];
+      serving = recipe.servings;
+    };
+    let nutrition;
+    nutrition = <NutritionalFacts nf={nfObj} serving={serving}/>;
+
     return(
-      <div className="container">
+      <div className="recipes-container container">
         <h2 className="recipe-details-heading mt-5">{recipe.title}</h2>
         <div className="row">
           <div className="col-md-6 recipe-details-img-container">
@@ -59,7 +61,7 @@ const RecipeDetails = (props) => {
             {directions}
           </div>
           <div className="col-md-4">
-            <h2 className="recipe-details-ingredients">Nutritional Facts</h2>
+            {nutrition}
           </div>
         </div>
       </div>
@@ -78,7 +80,6 @@ const mapStateToProps = (state, ownProps) => {
   const recipes = state.firestore.data.recipes;
   const recipe = recipes ? recipes[id] : null;
   const nutritionalFacts = state.firestore.data.nutritionalFacts;
-  console.log(state);
   return {
     recipe: recipe,
     recipeId: id,

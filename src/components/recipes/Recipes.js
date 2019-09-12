@@ -28,7 +28,7 @@ class Recipes extends Component {
     }
 
     return (
-      <div>
+      <div className="recipes-container">
         <div className="row mx-auto">
           { recipeIndex }
         </div>

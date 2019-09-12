@@ -7,7 +7,7 @@ import logo from '../../images/logo.png';
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="home-container">
         <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
@@ -38,9 +38,9 @@ export default class Home extends Component {
             <span className="sr-only">Next</span>
           </a>
         </div> 
-        <div className="row py-5 px-3">
+        <div className="row pt-5 px-3">
           <div className="col-sm-12 col-md-6">
-            <iframe width="100%" height="300" title="presentation" src="https://www.youtube.com/embed/bSzlRuYfamE" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="100%" height="400" title="presentation" src="https://www.youtube.com/embed/bSzlRuYfamE" frameBorder="0" allowFullScreen></iframe>
             <h2 className="home-heading">How it works</h2>
             <p className="home-content">Each user has a customizable virtual pantry.  Sous-Chef then gives you a list of recipes where you have 100% and 75% of the ingredients.</p>
           </div>

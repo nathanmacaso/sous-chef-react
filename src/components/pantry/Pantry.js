@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import background from '../../images/ingredients.jpg';
 
-export default class Pantry extends Component {
+class Pantry extends Component {
   render() {
+    const { auth } = this.props;
+
+    if(!auth.uid) return <Redirect to="/recipes"/>
+    
     return (
       <div>
         <div className="pantry-overlay">
@@ -12,3 +18,11 @@ export default class Pantry extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+export default connect(mapStateToProps)(Pantry)

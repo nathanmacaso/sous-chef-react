@@ -11,7 +11,7 @@ class App extends Component {
   render() {  
     return (
       <BrowserRouter>
-        <div>
+        <div className="app-container">
           <Navbar/>
           <Switch>
             <Route exact path="/" render={() => (<Redirect to="/home" />)}/>
