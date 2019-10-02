@@ -1,5 +1,8 @@
 @media (min-width: 1200px) { 
   /* Globals */
+  html, body, #root, .app-container {
+    height: 100%;
+  }
   body {
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
@@ -156,14 +159,60 @@
   .pantry-background {
     width: 100%;
   }
-  .pantry-overlay {
-    z-index: 1;
+
+  .pantry-row {
+    padding-top: 50px;
+  }
+  
+  .pantry-container {
     height: 100%;
-    width: 100%;
-    overflow: auto;
-    top: 0px;
-    left: 0px;
-    background: rgba(0, 0, 0, 0.7);
+    background-image: url("./images/ingredients.jpg");
+  }
+
+  .pantry-list {
+    background: rgba(225, 225, 225, 0.3);
+    color: #FFF;
+    padding: 20px;
+    min-width: 450px;
+    min-height: 400px;
+    margin-left: 250px;
+  }
+
+  .pantry-ul {
+    column-count: 3;
+    column-gap: 15px;
+  }
+
+  .pantry-h3 {
+    color: #FFF;
+  }
+
+  .pantry-textarea {
+    width: 400px;
+    height: 200px;
+    border-radius: 8px;
+  }
+
+  .pantry-btn {
+    width: 200px;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: -1px;
+    font-weight: 800;
+    background: rgba(225, 225, 225, 0.7);
+    border-radius: 8px;
+  }
+
+  .pantry-btn:hover {
+    text-align: center;
+    color: #000;
+    background: #fff;
+  }
+
+  .pantry-add {
+    min-width: 450px;
+    min-height: 400px;
+    padding: 20px;
+    background: rgba(225, 225, 225, 0.3);
   }
 
   /* Nutritional Facts */
